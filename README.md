@@ -9,13 +9,14 @@
 
 ## ⚠️ 重要提示：依赖与环境
 
-* **核心依赖**: 本脚本需要 **特定版本的 Auto.js** 才能正常运行，因为部分 APP 会检测无障碍服务，且脚本使用了内置 OCR 功能。推荐使用：
+* **核心依赖**: 本脚本需要兼容版本的 Auto.js 才能正常运行，因为部分 APP 会检测无障碍服务，且脚本使用了内置 OCR 功能。当前支持：
+  * **[AutoJs6 6.7.0](https://github.com/SuperMonster003/AutoJs6/releases/tag/v6.7.0)**
   * **[困鱼 (AutoJS.fake)](https://github.com/TonyJiangWJ/Ant-Forest/releases/download/v1.1.1.4/AutoJS.fake.latest.apk)**
   * **最新版下载**: `https://wwxs.lanzouq.com/b042le51i` (密码: `b034`)
 * **不兼容**:
   * **原版 Auto.js**: 请关闭原版 Auto.js 的无障碍权限。
   * **Auto.js Pro**: 由于其无障碍限制和代码审查政策，**不受支持**，请勿使用。
-* **权限**: 需要授予 Auto.js 必要的权限，如无障碍服务、后台运行、悬浮窗等。
+* **权限**: 需要授予 Auto.js 必要的权限，如无障碍服务、后台运行、悬浮窗等。AutoJs6 6.7 使用 Paddle OCR 时，还需在 AutoJs6 的插件中心安装 Paddle OCR 插件；未安装时默认可使用内置 ML Kit OCR。
 
 ## ✨ 主要功能
 
@@ -53,7 +54,7 @@
 ## 🚀 使用入门
 
 1. **环境准备**:
-    * 下载并安装上文提到的 **[困鱼 (AutoJS.fake)](https://github.com/TonyJiangWJ/Ant-Forest/releases/download/v1.1.1.4/AutoJS.fake.latest.apk)** 或其最新版本。
+    * 下载并安装 **[AutoJs6 6.7.0](https://github.com/SuperMonster003/AutoJs6/releases/tag/v6.7.0)**，或上文提到的 **[困鱼 (AutoJS.fake)](https://github.com/TonyJiangWJ/Ant-Forest/releases/download/v1.1.1.4/AutoJS.fake.latest.apk)**。
     * 将整个脚本项目文件夹放置到设备的 **`/sdcard/脚本/`** 目录下。
 2. **授权与设置**:
     * 打开 AutoJS 应用，下拉刷新列表，找到本项目。
@@ -100,7 +101,7 @@
 * **ADB 命令** (请将包名替换为你使用的 AutoJS 版本，可通过 `context.getPackageName()` 获取):
 
     ```shell
-    adb shell pm grant org.autojs.autojs.modify android.permission.WRITE_SECURE_SETTINGS
+    adb shell pm grant org.autojs.autojs6 android.permission.WRITE_SECURE_SETTINGS
     ```
 
 * **详细教程**: [通过ADB授权脚本自动开启无障碍权限](https://github.com/TonyJiangWJ/AutoScriptBase/blob/master/resources/doc/ADB%E6%8E%88%E6%9D%83%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%BC%80%E5%90%AF%E6%97%A0%E9%9A%9C%E7%A2%8D%E6%9D%83%E9%99%90.md)
@@ -333,4 +334,3 @@ signRunner.setName('测试我的应用签到').exec();
 | ![alipay_qrcode](./resources/alipay_qrcode.png) | ![wechat_qrcode](./resources/wechat_qrcode.png) | ![扫码领红包](./resources/hongbao_qrcode.png) |
 
 * 也可以运行 `unit/支持作者.js` 在线获取红包口令，通过支付宝直接打开领取，每使用一个红包我都可以获取一分钱的收益。如果你不嫌烦的话可以给 `unit/支持作者自动版.js` 设置定时任务，每天自动领取。
-

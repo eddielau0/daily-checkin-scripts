@@ -19,7 +19,7 @@ const OCRConfig = {
   },
   template: `
   <div>
-    <tip-block>本地OCR支持。如果已安装mlkitOcr插件则自动使用mlkit，未安装则尝试PaddleOCR（需要修改版AutoJS支持）</tip-block>
+    <tip-block>AutoJs6 6.7可直接使用内置ML Kit OCR；使用Paddle OCR前，请先在AutoJs6插件中心安装Paddle OCR插件。其他兼容版AutoJS仍按已安装的OCR能力自动选择。</tip-block>
     <tip-block>签到功能界面复杂，建议使用PaddleOCR，mlkit-ocr对中文的支持不是特别好，单个数字或者浅色背景下不能准确识别。</tip-block>
     <van-cell title="本地OCR优先级">
       <template #right-icon>
