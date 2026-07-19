@@ -6,6 +6,13 @@ module.exports = {
       script: 'NeteaseCloudMusic.js',
       // 请先单独测试通过后，再在可视化配置中启用。
       enabled: false
+    },
+    {
+      name: '小蚕惠生活签到',
+      taskCode: 'XiaoCan',
+      script: 'XiaoCan.js',
+      // 请先单独测试通过后，再在可视化配置中启用。
+      enabled: false
     }
   ]
 }
