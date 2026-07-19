@@ -37,10 +37,18 @@ function SignRunner () {
     let signEntry = widgetUtils.widgetGetById('com.alicloud.databox:id/tvSignInAction')
     if (signEntry) {
       if (signEntry.text() == '领取') {
-        this.displayButtonAndClick(signEntry)
+        if (!this.displayButtonAndClick(signEntry, '领取')) {
+          this.pushErrorLog('签到按钮点击失败')
+          commonFunctions.minimize()
+          return
+        }
         sleep(3000)
-        signEntry = widgetUtils.widgetGetById('com.alicloud.databox:id/tvSignInAction')
+        signEntry = widgetUtils.widgetGetById('com.alicloud.databox:id/tvSignInAction', 3000)
         if (signEntry && signEntry.text() == '明日可领取') {
+          this.setExecuted()
+        } else if (!signEntry) {
+          // 阿里云盘部分版本签到成功后会刷新页面并移除原签到控件。
+          this.pushLog('签到控件已消失，按页面刷新判定签到完成')
           this.setExecuted()
         } else {
           this.pushErrorLog('重新校验签到是否完成失败：' + (signEntry ? '控件内容：' + signEntry.text() : '控件无法获取'))
