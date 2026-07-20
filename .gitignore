@@ -9,3 +9,4 @@ ExternalUnlockDevice.js
 *.txt
 *.txt.*
 logs/
+.history/

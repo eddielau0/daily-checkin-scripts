@@ -28,6 +28,7 @@ config.is_test = true
 // let signRunner = require('../core/JingDongBeans.js')
 // let signRunner = require('../core/BBFarm.js')
 // let signRunner = require('../core/XiaomiShop.js')
-let signRunner = require('../core/Eleme.js')
+// let signRunner = require('../core/Eleme.js')
+let signRunner = require('../core/YiTao.js')
 signRunner.setName('签到测试').exec()
 runningQueueDispatcher.removeRunningTask()

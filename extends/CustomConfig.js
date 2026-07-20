@@ -13,6 +13,13 @@ module.exports = {
       script: 'XiaoCan.js',
       // 请先单独测试通过后，再在可视化配置中启用。
       enabled: false
+    },
+    {
+      name: '一淘签到领钱',
+      taskCode: 'YiTaoSign',
+      script: 'YiTao.js',
+      // 请先单独测试通过后，再在可视化配置中启用。
+      enabled: false
     }
   ]
 }
